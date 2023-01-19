@@ -62,14 +62,21 @@ namespace Booking.Methods
                     where dayWeek.WeekId == input && dayWeek.DayId == dayinput
                     select new { DayOfWeeks = dayWeek, Days = days, Rooms = room }
                     );
-                Console.WriteLine("Booking ID\t\tRoom Name\t\tWeek\tDay\t\tSize\t\tBooked");
-                Console.WriteLine("--------------------------------------------------------------------------------------------------------");
+                int pad = 20;
+                int pad3 = 19;
+               
+                Console.WriteLine("Booking ID".PadRight(pad)+"Room Name".PadRight(pad)+"Week".PadRight(pad)+"Day".PadRight(pad)+
+                    "Size".PadRight(pad)+"Booked");
+                Console.WriteLine("-----------------------------------------------------------------------------------------------------------\n");
                 foreach (var c in result)
                 {
-                    Console.WriteLine(c.DayOfWeeks.Id + "\t\t\t" + c.Rooms.RoomName + "\t\t\t" + c.DayOfWeeks.WeekId + "\t" + c.Days.Name +"\t\t" + 
-                        c.Rooms.Size +"\t\t" +
+                    Console.WriteLine(c.DayOfWeeks.Id + "".PadRight(pad3) + c.Rooms.RoomName.ToString().PadRight(pad) + 
+                        c.DayOfWeeks.WeekId.ToString().PadRight(pad)
+                        + c.Days.Name +"".PadRight(13) + 
+                        c.Rooms.Size.ToString().PadRight(pad) +
                         (c.DayOfWeeks.Isbooked == false ? "Free" : "Booked"));
                 }
+                Console.WriteLine();
             }
         }
 
