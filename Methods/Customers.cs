@@ -69,7 +69,7 @@ namespace Booking.Methods
                 else
                 {
                     Console.WriteLine("That room is already booked.");
-                    Thread.Sleep(1000);
+                    Thread.Sleep(2000);
                     Console.Clear();
                     Menues.RunProgram();
                 }
