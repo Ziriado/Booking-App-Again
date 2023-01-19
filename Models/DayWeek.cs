@@ -8,7 +8,7 @@ namespace Booking.Models
 {
     public class DayWeek
     {
-        //Var Icollection på allt
+        
         public int Id { get; set; }
         public int WeekId { get; set; }
         public int DayId { get; set; }
