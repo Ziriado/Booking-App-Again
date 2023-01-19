@@ -70,7 +70,8 @@ namespace Booking.Methods
 
                 var count=result.Count;
 
-                Console.WriteLine("Rooms booked "+count);
+                Console.WriteLine("\nRooms booked "+count);
+                Console.WriteLine("\n-----------------------------------------------------------------");
             }         
         }
 
@@ -82,7 +83,8 @@ namespace Booking.Methods
 
                 var count = result.Count;
 
-                Console.WriteLine("Rooms not booked " + count);
+                Console.WriteLine("\nRooms not booked " + count);
+                Console.WriteLine("\n-----------------------------------------------------------------");
             }
         }
 
@@ -99,7 +101,8 @@ namespace Booking.Methods
 
                 var count = result.Count;
 
-                Console.WriteLine("Rooms free " + count);
+                Console.WriteLine("\nRooms free " + count);
+                Console.WriteLine("\n-----------------------------------------------------------------");
             }
         }
 
@@ -116,7 +119,8 @@ namespace Booking.Methods
 
                 var count = result.Count;
 
-                Console.WriteLine("Rooms booked " + count);
+                Console.WriteLine("\nRooms booked " + count);
+                Console.WriteLine("\n-----------------------------------------------------------------");
             }
         }
     }

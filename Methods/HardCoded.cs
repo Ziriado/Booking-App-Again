@@ -15,8 +15,20 @@ namespace Booking.Methods
         static string connString = "Server=tcp:mybooking9993.database.windows.net,1433;Initial Catalog=myBooking9993;Persist Security Info=False;User ID=christoffergustafssonadmin;Password=Hejsanmicke123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         public static void InsertHardCodedValues()
         {
+            int answear = 0;
+            Console.WriteLine("Are you sure you want to insert everything again to the database? ");
+            Console.WriteLine("Press 1 for yes 2 for no.");
+            answear=Helpers.TryNumber(answear,2,1);
+            if (answear == 1)
+            {
             HardCodedDays();
             HardCodedWeek();
+
+            }
+            else if (answear == 2)
+            {
+                Menues.AdminPage();
+            }
             //HardCodedInsertDaysAndWeeks();
         }
         private static void HardCodedDays()

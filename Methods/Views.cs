@@ -77,6 +77,7 @@ namespace Booking.Methods
         {
             using (var connection = new RoomContext())
             {
+
                 var result = (
                     from dayWeek in connection.DayWeeks
                     join days in connection.Days on dayWeek.DayId equals days.Id
@@ -86,12 +87,17 @@ namespace Booking.Methods
                     select new { DayOfWeeks = dayWeek, Days = days, Rooms = room, Bookers = booker }
                     );
                 int pad = 20;
-                Console.WriteLine("Booking ID\t\tRoom Name\t\tWeek"+"\tDay".PadRight(17)+"Booked".PadRight(pad)+"Booker Name".PadRight(pad)+"Company Name");
-                Console.WriteLine("--------------------------------------------------------------------------------------------------------------------------");
+                int pad2 = 19;
+                int pad3 = 10;
+                int pad4 = 15;
+                Console.WriteLine("Booking ID".PadRight(pad)+"Room Name".PadRight(pad)+"Week".PadRight(pad)+"Day".PadRight(pad)+"Booked".PadRight(pad)+
+                    "Booker Name".PadRight(pad)+"Company Name");
+                Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------");
                 foreach (var c in result)
                 {
-                    Console.WriteLine(c.DayOfWeeks.Id + "\t\t\t" + c.Rooms.RoomName + "\t\t\t" + c.DayOfWeeks.WeekId + "\t" + c.Days.Name + "\t\t" +
-                        (c.DayOfWeeks.Isbooked == false ? "Free" : "Booked").PadRight(pad) + c.Bookers.Name + "\t\t" + c.Bookers.CompanyName);
+                    Console.WriteLine(c.DayOfWeeks.Id + "".PadRight(pad2) + c.Rooms.RoomName + "".PadRight(pad3) + c.DayOfWeeks.WeekId + "".PadRight(pad) +
+                        c.Days.Name + "".PadRight(pad4) +
+                        (c.DayOfWeeks.Isbooked == false ? "Free" : "Booked").PadRight(pad) + c.Bookers.Name + "".PadRight(pad4) + c.Bookers.CompanyName);
                 }
             }
         }
